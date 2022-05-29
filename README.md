@@ -20,10 +20,10 @@ It is primarily a Facial Recognition project.
 
 ## How does it work?
 
-Consists of three sections:<br />
-**Register:** Users are required to register with their face before logging and play the drums.<br />
-**Login:** Users can login successfully to play the drums only after they register. <br />
-**Play Drums:** Users can play drums with their hands after successfully logging in.
+Consists of three sections-<br />
+  **Register:** Users are required to register with their face before logging and play the drums.<br />
+  **Login:** Users can login successfully to play the drums only after they register. <br />
+  **Play Drums:** Users can play drums with their hands after successfully logging in.
 
 ## How to play?
 
