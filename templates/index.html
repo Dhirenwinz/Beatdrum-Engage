@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block title %} BeatDrum {% endblock %} {% block
+body %}
+
+<!-- Home Section -->
+<section id="home" class="d-flex align-items-center">
+  <div
+    class="container position-relative"
+    data-aos="fade-up"
+    data-aos-delay="500"
+  >
+    <h1>BeatDrum</h1>
+    <h2>March to the beat of your own drummer.</h2>
+    <a href="{{url_for('login')}}" class="btn-get-started scrollto">Login</a>
+    <a href="{{url_for('register')}}" class="btn-get-started scrollto"
+      >Register</a
+    >
+  </div>
+</section>
+
+<main id="main">
+  <!-- ======= Steps Section ======= -->
+  <section id="steps" class="steps">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-up">
+          <div class="box">
+            <span>01</span>
+            <h4>Register</h4>
+            <p>
+              Register using your face to login successfully and use the app.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 mt-4 mt-lg-0"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <div class="box">
+            <span>02</span>
+            <h4>Login</h4>
+            <p>
+              To use the app, you must first login. You must be already
+              registered to login successfully.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 mt-4 mt-lg-0"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="box">
+            <span>03</span>
+            <h4>Smash it off!</h4>
+            <p>
+              Once you have logged in, you are ready to start playing the drums.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Steps Section -->
+</main>
+
+{% endblock %}

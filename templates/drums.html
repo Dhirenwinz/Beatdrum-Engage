@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+
+Play Drums 
+
+{% endblock %} 
+
+
+{% block body %}
+
+<div class="drums-window">
+  
+  <h1>Play Drums</h1>
+  <h4>Use your index fingers to play the drums</h4>
+  <div class="tips">
+  <h5 style="margin-top: 0.7rem">To make it easier to recognize your fingers- 
+  <h5>Tip-1: Spread your fingers out.</h5>
+  <h5>Tip-2: Ensure that the full palm is visible in the camera while having its front facing the camera.</h5>
+  <h5>Tip-3: Make sure that the room is well-lit.</h5>
+  </div>
+
+  <!-- Display of Drum Set Layout -->
+  <div>
+    <img
+      class="video-window"
+      src="{{url_for('video_drums')}}"
+      width="50%"
+      height="50%"
+    />
+  </div>
+
+<!-- Include login, register and home buttons -->
+<div class="buttons" style="margin-top: 1.6rem">
+    <div class="login-button">
+      <a href="{{url_for('login')}}">Login</a>
+    </div>
+  
+    <div class="register-button">
+      <a href="{{url_for('register')}}">Register</a>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <div class="home-button">
+      <a href="/" style="line-height: 0.8rem;">Back to Home</a>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock %} {% block body
+%}
+
+<!-- If the page is not the main login page -->
+{% if flag != 0 %}
+
+<style>
+  #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+{% endif %}
+
+<!-- If the page is the main login page -->
+{% if flag == 0 %}
+
+<div class="login-text">
+  <h1 id="text_h1">Login Page!</h1>
+  <h3 id="text_h3">Make sure your face is clearly visible</h3>
+  <h4 id="text_h4">
+    Click on capture button and do not move for 3 seconds to ensure your image
+    is captured properly
+  </h4>
+
+  <!-- Display of user's webcam feed -->
+  <div id="video-slot">
+    <img
+      class="video-window"
+      src="{{url_for('video_face_rec')}}"
+      width="40%"
+      height="40%"
+      style="background-color: white"
+    />
+  </div>
+
+  <!-- Capture Image Button -->
+  <div class="capture-button">
+    <form action="/login" method="post">
+      <button
+        type="submit"
+        name="capture"
+        class="btn btn-success"
+        id="btn-element"
+      >
+        Capture
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to handle clicking of capture button
+  function clickHandler() {
+    let h1_element = document.getElementById("text_h1");
+    h1_element.innerHTML = "Logging in";
+    h1_element.style.paddingTop = "7rem";
+
+    let h3_element = document.getElementById("text_h3");
+    h3_element.innerHTML = "Please wait for a few seconds...";
+
+    document.getElementById("video-slot").remove();
+
+    let footer_element = document.getElementById("footer");
+    footer_element.style.position = "fixed";
+    footer_element.style.left = "0";
+    footer_element.style.right = "0";
+    footer_element.style.bottom = "0";
+  }
+
+  // Adding 'click' event listener on the capture button
+  document.getElementById("btn-element").addEventListener("click", () => {
+    setTimeout(function () {
+      document.getElementById("btn-element").remove();
+
+      let h1_element = document.getElementById("text_h1");
+      h1_element.innerHTML = "Image is being captured";
+
+      let h3_element = document.getElementById("text_h3");
+      h1_element.innerHTML = "Please do not move";
+
+      document.getElementById("text_h4").innerHTML = "";
+    }, 10);
+
+    setTimeout(clickHandler, 3000);
+  });
+</script>
+
+<!-- No face detected -->
+{% elif flag == 1 %}
+
+<div class="login-text-2">
+  <h1 style="margin-bottom: 1.5rem">No face detected</h1>
+  <h3>
+    Please ensure that your face is in the frame of the camera and try again
+  </h3>
+  <h5 style="margin-top: 1rem">Tip: Make sure that the room is well-lit.</h5>
+</div>
+
+<!-- More than one face detected -->
+{% elif flag == 2 %}
+
+<div class="login-text-2">
+  <h1 style="margin-bottom: 1.5rem">More than one face detected</h1>
+  <h3>
+    Please ensure that only one face is present in the frame of the camera and
+    try again
+  </h3>
+  <h5 style="margin-top: 1rem">Tip: Make sure that the room is well-lit.</h5>
+</div>
+
+<!-- Unsuccessful Login -->
+{% elif flag == 4 %}
+
+<div class="login-text-2">
+  <h1 style="margin-bottom: 1.5rem">Login Unsuccessful</h1>
+  <h3>Cannot recognize user. Please register to successfully login.</h3>
+</div>
+
+{% endif %}
+
+<!-- Include login, register and home buttons -->
+{% if flag >= 1 %}
+
+<div class="buttons">
+  <div class="login-button">
+    <a href="{{url_for('login')}}">Login</a>
+  </div>
+
+  <div class="register-button">
+    <a href="{{url_for('register')}}">Register</a>
+  </div>
+</div>
+
+<div class="buttons">
+  <div class="home-button">
+    <a href="/" style="line-height: 0.8rem">Back to Home</a>
+  </div>
+</div>
+
+{% endif %} {% endblock %}
