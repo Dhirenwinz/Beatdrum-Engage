@@ -56,7 +56,7 @@ class Capture(object):
 
             # Check for a match in the database
             df = DeepFace.find(img_path = check_user_path, db_path = registered_users_db_path, detector_backend='retinaface', 
-                                                                            enforce_detection = False, distance_metric='euclidean_l2')
+                                                                            enforce_detection = False, distance_metric='euclidean_l2', model = model)
                 
             representations_vgg_face_path = "Face Recognition/Registered_Users/representations_vgg_face.pkl"    
             
@@ -124,7 +124,7 @@ class Capture(object):
             cv2.imwrite(check_user_path, user_img) # Temporarily store the captured image for finding similar matches with the already registered users
 
             df = DeepFace.find(img_path = check_user_path, db_path = registered_users_db_path, detector_backend='retinaface', 
-                                                                            enforce_detection = False, distance_metric='euclidean_l2')
+                                                                            enforce_detection = False, distance_metric='euclidean_l2', model = model)
             
             # Remove the temporarily written captured image
             if os.path.exists(check_user_path):
