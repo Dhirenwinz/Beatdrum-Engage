@@ -40,4 +40,5 @@ Placing the index finger upright in the appropriate square of the instrument you
   _NOTE_: Before running the file ensure that the necessary dependencies to run the app are installed on your system. If they are not installed, 'pip install' command should work to install the missing dependencies in majority of the cases. Some of the important dependencies and modules required for this app are - Flask, opencv, deepface, mediapipe, pygame, sys, os and time.
 - That's it, you are good to go!
 
+
 _Happy Reading_
