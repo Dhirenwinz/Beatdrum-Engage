@@ -31,9 +31,9 @@ Placing the index finger upright in the appropriate square of the instrument you
 
 ## Setting Up:
 
-- Download the zip files and extract the 'Project' folder to any directory.
-- Do not change the structure of the Project folder after extracting.
-- Open command line and go to Project directory. This directory contains 'app.py' file. Install python (latest version can be installed) to run this file.
+- Download the zip file and extract the files to any directory.
+- Do not change the structure of the files and folders after extracting.
+- Open command line in the current directory. This directory contains 'app.py' file. Install python (latest version can be installed) to run this file.
 - Now, to run this file, give the command 'python app.py'.
 - Once the app starts running, open browser and enter "localhost:6500" to go to the home page of BeatDrum.
   _NOTE_: Before running the file ensure that the necessary dependencies to run the app are installed on your system. If they are not installed, 'pip install' command should work to install the missing dependencies in majority of the cases. Some of the important dependencies and modules required for this app are - Flask, opencv, deepface, sys, os and time.
