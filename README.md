@@ -21,10 +21,16 @@ It is primarily a Facial Recognition project.
 
 ## How does it work?
 
-Consists of three sections-<br />
+-Consists of three sections-<br />
 **Register:** Users are required to register with their face before logging and play the drums.<br />
 **Login:** Users can login successfully to play the drums only after they register. <br />
-**Play Drums:** Users can play drums with their hands after successfully logging in.
+**Play Drums:** Users can play drums with their hands after successfully logging in. <br />
+- During both registration and login processes, if there is no face in the frame of the camera, then 'No face detected' is shown.
+- During both registration and login processes, if there are more than one faces in the frame of the camera, 'More than one face detected' is shown. 
+- If an already registered user tries to register again, then 'User is already registered' is shown.
+- If an unregistered user tries to register, then 'Registration Successful!' is shown.
+- If an unregistered user tries to login, then 'Login Unsuccessful!' is shown.
+- If a registered user tries to login, then the user is redirected to the page where drums can be played.
 
 ## How to play?
 
